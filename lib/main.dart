@@ -3,11 +3,15 @@ import 'package:provider/provider.dart';
 import 'package:tarea3_5/screens/recetas_list.dart';
 import 'package:tarea3_5/widgets/receta_item.dart';
 import 'package:tarea3_5/models/favoritos.dart';
+import 'package:tarea3_5/models/theme.dart';
 
 void main() {
   runApp(
-    ChangeNotifierProvider(
-      create: (context) => FavoritosModel(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => FavoritosModel()),
+        ChangeNotifierProvider(create: (_) => ThemeModel()),
+      ],
       child: MyApp(),
     ),
   );
@@ -16,19 +20,11 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final themeModel = Provider.of<ThemeModel>(context);
+
     return MaterialApp(
+      theme: themeModel.currentTheme,
       title: 'Recetario',
-      theme: ThemeData(
-        primaryColor: Colors.brown[400],
-        scaffoldBackgroundColor: const Color.fromARGB(255, 67, 47, 38),
-        textTheme: const TextTheme(
-          bodyText2: TextStyle(color: Color.fromARGB(255, 228, 217, 215)),
-        ),
-        appBarTheme: const AppBarTheme(
-          color: Color.fromARGB(255, 21, 14, 12),
-        ),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
       home: RecetasList(
         recetas: [
           RecetaItem(
