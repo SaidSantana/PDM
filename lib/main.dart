@@ -21,7 +21,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final themeModel = Provider.of<ThemeModel>(context);
-
+    if (themeModel.currentTheme == null) {
+      themeModel.setTheme(
+          originalTheme); // Establece un tema predeterminado si no hay ninguno seleccionado
+    }
     return MaterialApp(
       theme: themeModel.currentTheme,
       title: 'Recetario',
