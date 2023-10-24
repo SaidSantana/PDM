@@ -71,8 +71,6 @@ flutter:
     - lib/assets/receta3.jpg
     - lib/assets/receta4.jpg
     - lib/assets/receta5.jpg
-    - lib/assets/Spaghetti con Albóndigas.pdf
-
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
