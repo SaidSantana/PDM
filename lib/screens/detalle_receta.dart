@@ -24,7 +24,7 @@ class DetalleReceta extends StatelessWidget {
             ),
             onPressed: () {
               ScaffoldMessenger.of(context)
-                  .removeCurrentSnackBar(); // Remueve el SnackBar actual
+                  .removeCurrentSnackBar(); 
 
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
@@ -74,7 +74,7 @@ class DetalleReceta extends StatelessWidget {
                       ingrediente,
                       textAlign: TextAlign.center,
                     ),
-                    const SizedBox(height: 8.0), // Espacio entre ingredientes
+                    const SizedBox(height: 8.0), 
                   ],
                 ),
               const SizedBox(height: 10.0),
@@ -95,7 +95,7 @@ class DetalleReceta extends StatelessWidget {
                       paso,
                       textAlign: TextAlign.center,
                     ),
-                    const SizedBox(height: 15.0), // Espacio entre pasos
+                    const SizedBox(height: 15.0), 
                   ],
                 ),
             ],
